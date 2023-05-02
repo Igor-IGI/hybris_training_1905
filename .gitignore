@@ -1,0 +1,15 @@
+# Ignore all files in the data, log, roles, and temp directories
+data/
+log/
+roles/
+temp/
+.idea/
+idea-module-files/
+
+# Include localextensions.xml in the config directory
+config/*
+!config/localextensions.xml
+
+# Ignore the all subdirectories and subfiles of bin folder expect custom folder
+bin/*
+!bin/custom/
