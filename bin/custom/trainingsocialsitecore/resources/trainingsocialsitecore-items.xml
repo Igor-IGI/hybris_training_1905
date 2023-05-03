@@ -13,6 +13,20 @@
         </enumtype>
     </enumtypes>
 
+    <!--Social site will store foreing key of Customer-->
+    <relations>
+        <relation code="CustomerToSocialSite" generate="true" autocreate="true" localized="false">
+            <sourceElement type="Customer" cardinality="one" qualifier="customer">
+                <modifiers read="true" write="true" search="true" optional="false"/>
+            </sourceElement>
+            <!--If ordered=true to keep correct order when using impex for many relation,
+            partof=true cascade delete, if we delete parent object the all child object will be deleted-->
+            <targetElement type="SocialSite" cardinality="many" qualifier="socialSites">
+                <modifiers read="true" write="true" search="true" optional="true" partof="true"/>
+            </targetElement>
+        </relation>
+    </relations>
+
     <itemtypes>
         <itemtype code="SocialSite" autocreate="true" generate="true"
                   jaloclass="de.hybris.platform.trainingsocialsitecore.jalo.SocialSite">
