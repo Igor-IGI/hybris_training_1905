@@ -20,6 +20,28 @@
     <div class="container-lg col-md-6">
         <div class="account-section-content">
             <div class="account-section-form">
+                <div>
+                    <h3>Social sites</h3>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Url</th>
+                        </tr>
+                        <c:forEach var="socialSite" items="${socialSites}">
+                            <tr>
+                                <td>
+                                    <p>${socialSite.socialSite}</p>
+                                        <%--<c:out value="${socialSite.socialSite}"/>--%>
+                                </td>
+                                <td>
+                                    <c:out value="${socialSite.url}"/>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+                <hr/>
+                <br/>
                 <form:form action="update-profile" method="post" modelAttribute="updateProfileForm">
 
                     <formElement:formSelectBoxDefaultEnabled idKey="profile.title" labelKey="profile.title" path="titleCode" mandatory="true" skipBlank="false" skipBlankMessageKey="form.select.none" items="${titleData}" selectCSSClass="form-control"/>
