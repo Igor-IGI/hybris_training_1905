@@ -96,5 +96,6 @@
     <extension name='merchandisingservicesbackoffice' />
     <extension name='merchandisingstorefrontsampledataaddon' />
     <extension name='trainingsocialsitecore' />
+    <extension name='trainingsocialsitefacade' />
   </extensions>
 </hybrisconfig>
