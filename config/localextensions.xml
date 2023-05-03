@@ -97,5 +97,6 @@
     <extension name='merchandisingstorefrontsampledataaddon' />
     <extension name='trainingsocialsitecore' />
     <extension name='trainingsocialsitefacade' />
+    <extension name='trainingsocialsitestorefront' />
   </extensions>
 </hybrisconfig>
