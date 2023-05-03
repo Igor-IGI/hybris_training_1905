@@ -9,7 +9,7 @@ import de.hybris.platform.trainingsocialsitefacade.facade.ITrainingSocialSiteFac
 
 import java.util.List;
 
-public class TrainingSocialSiteFacade implements ITrainingSocialSiteFacade {
+public class TrainingSocialSiteFacadeImpl implements ITrainingSocialSiteFacade {
 
     private TrainingSocialSiteCoreService courseService;
     private Converter<CustomerModel, CustomerData> trainingCustomerConverter;

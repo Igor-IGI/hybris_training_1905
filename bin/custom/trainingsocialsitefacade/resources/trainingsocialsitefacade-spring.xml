@@ -67,7 +67,7 @@
     <!--Facade bean (get CustomerDAO)-->
     <alias name="defaultTrainingSocialSiteFacade" alias="trainingSocialSiteFacade"/>
     <bean id="defaultTrainingSocialSiteFacade"
-          class=" de.hybris.platform.trainingsocialsitefacade.facade.impl.TrainingSocialSiteFacade">
+          class=" de.hybris.platform.trainingsocialsitefacade.facade.impl.TrainingSocialSiteFacadeImpl">
         <property name="trainingCustomerConverter" ref="customerConverter"/>
         <property name="courseService" ref="trainingSocialSiteService"/>
     </bean>
