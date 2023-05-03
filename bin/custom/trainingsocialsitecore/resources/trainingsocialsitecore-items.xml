@@ -14,5 +14,28 @@
     </enumtypes>
 
     <itemtypes>
+        <itemtype code="SocialSite" autocreate="true" generate="true"
+                  jaloclass="de.hybris.platform.trainingsocialsitecore.jalo.SocialSite">
+            <description>SocialSite type that contains social site and utl to site.</description>
+            <deployment table="SocialSite" typecode="24243"/>
+            <attributes>
+                <attribute qualifier="nameOfSocialSite" type="SocialSiteEnum">
+                    <description>Store the value of social site</description>
+                    <!--read=true generate getter, write=true generate setter,
+                    optional=false define if this attribute is mandatory or optionals,
+                    unique=true define that the attribute must be unique,
+                    initial=true the attribute will be writable only during the item creation, usefull when is write=false-->
+                    <modifiers read="true" write="true" optional="true" unique="false"/>
+                    <!--If is type=property the value will be stored in database,
+                    dynamic means that the value will bi only calculated in real time and not be stored in DB-->
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="url" type="java.lang.String">
+                    <description>Store the value of url link to social site.</description>
+                    <modifiers read="true" write="true" unique="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
     </itemtypes>
 </items>
