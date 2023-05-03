@@ -40,5 +40,10 @@
         </property>
     </bean>
 
-
+    <!--Spring bean for CustomerPopulator - create Populator -->
+    <alias name="defaultCustomerDataPopulator" alias="customerDataPopulator"/>
+    <bean id="defaultCustomerDataPopulator"
+          class="de.hybris.platform.trainingsocialsitefacade.populators.CustomerDataPopulator">
+        <property name="socialSiteConverter" ref="socialSiteDataConverter"/>
+    </bean>
 </beans>
