@@ -21,4 +21,12 @@
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
 
+    <!-- Declaration for Customer DAO object to add dependency injection -->
+    <alias name="trainingSocialSiteDaoImpl" alias="trainingSocialSiteDao"/>
+    <bean id="trainingSocialSiteDaoImpl"
+          class="de.hybris.platform.trainingsocialsitecore.dao.impl.TrainingSocialSiteCustomerDaoImpl">
+        <!-- setter injection example -->
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+        <property name="modelService" ref="modelService"/>
+    </bean>
 </beans>
