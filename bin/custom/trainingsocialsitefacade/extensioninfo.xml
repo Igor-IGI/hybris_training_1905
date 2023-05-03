@@ -1,38 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
  Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
---><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
-           
-    
-    <extension abstractclassprefix="Generated" classprefix="Trainingsocialsitefacade" jaloLogicFree="true" managername="TrainingsocialsitefacadeManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="trainingsocialsitefacade" usemaven="false">
-                  
-      
-        
-        <!-- for more information on maven managed libraries please consult https://wiki.hybris.com/x/Nq8sDQ -->
-                               
-      
-        
-        <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->
-                         
-      
-        
-        <!-- <requires-extension name="cms"/> -->
-                         
-      
+-->
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
-      
-        
-        <coremodule generated="true" manager="de.hybris.platform.trainingsocialsitefacade.jalo.TrainingsocialsitefacadeManager" packageroot="de.hybris.platform.trainingsocialsitefacade"/>
-                      
-        
+    <extension abstractclassprefix="Generated" classprefix="Trainingsocialsitefacade" jaloLogicFree="true"
+               managername="TrainingsocialsitefacadeManager"
+               managersuperclass="de.hybris.platform.jalo.extension.Extension" name="trainingsocialsitefacade"
+               usemaven="false">
+
+        <requires-extension name="commercefacades" />
+        <requires-extension name="trainingsocialsitecore" />
+
+        <coremodule generated="true"
+                    manager="de.hybris.platform.trainingsocialsitefacade.jalo.TrainingsocialsitefacadeManager"
+                    packageroot="de.hybris.platform.trainingsocialsitefacade"/>
+
         <webmodule jspcompile="false" webroot="/trainingsocialsitefacade"/>
-                					
-	
-        
-           
-    
+
     </extension>
-              
-
-
 </extensioninfo>
