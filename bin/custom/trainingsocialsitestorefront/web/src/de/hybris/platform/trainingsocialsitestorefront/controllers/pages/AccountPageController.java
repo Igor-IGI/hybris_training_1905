@@ -490,6 +490,8 @@ public class AccountPageController extends AbstractSearchPageController
 		updateProfileForm.setLastName(customerData.getLastName());
 
 		model.addAttribute("updateProfileForm", updateProfileForm);
+		// Add attribute socialSites, which get ArrayList of socialSite object
+		model.addAttribute("socialSites", customerData.getSocialSites());
 
 		final ContentPageModel updateProfilePage = getContentPageForLabelOrId(UPDATE_PROFILE_CMS_PAGE);
 		storeCmsPageInModel(model, updateProfilePage);
