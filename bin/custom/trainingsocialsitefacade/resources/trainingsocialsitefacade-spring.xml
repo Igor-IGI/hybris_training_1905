@@ -47,6 +47,12 @@
         <property name="socialSiteConverter" ref="socialSiteDataConverter"/>
     </bean>
 
+    <!--Add cutomerDatapPopulator to default OOTB customerPopulator-->
+    <bean parent="modifyPopulatorList">
+        <property name="list" ref="customerConverter"/>
+        <property name="add" ref="customerDataPopulator"/>
+    </bean>
+
     <!--Spring bean for custom make customerConverter which one don't need because we extend existing OOTB-->
     <!--    <alias name="customerConverter" alias="customerConverter"/>-->
     <!--    <bean id="customerConverter" parent="abstractPopulatingConverter">-->
@@ -57,5 +63,4 @@
     <!--            </list>-->
     <!--        </property>-->
     <!--    </bean>-->
-
 </beans>
