@@ -8,4 +8,10 @@
 		<property name="url" type="java.lang.String"/>
 	</bean>
 
+	<!--extended OOTB CustomerData object -->
+	<bean class="de.hybris.platform.commercefacades.user.data.CustomerData">
+		<property name="socialSites"
+				  type="java.util.Collection&lt;de.hybris.platform.trainingsocialsitefacade.data.SocialSiteData&gt;"/>
+	</bean>
+
 </beans>
