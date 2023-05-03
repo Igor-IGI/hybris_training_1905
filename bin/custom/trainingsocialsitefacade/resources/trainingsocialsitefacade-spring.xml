@@ -46,4 +46,16 @@
           class="de.hybris.platform.trainingsocialsitefacade.populators.CustomerDataPopulator">
         <property name="socialSiteConverter" ref="socialSiteDataConverter"/>
     </bean>
+
+    <!--Spring bean for custom make customerConverter which one don't need because we extend existing OOTB-->
+    <!--    <alias name="customerConverter" alias="customerConverter"/>-->
+    <!--    <bean id="customerConverter" parent="abstractPopulatingConverter">-->
+    <!--        <property name="targetClass" value="de.hybris.platform.trainingsocialsitefacade.dto.CustomerDto"/>-->
+    <!--        <property name="populators">-->
+    <!--            <list>-->
+    <!--                <ref bean="customerDataPopulator"/>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+
 </beans>
