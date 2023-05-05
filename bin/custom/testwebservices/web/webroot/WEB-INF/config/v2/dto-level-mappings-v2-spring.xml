@@ -1543,4 +1543,19 @@
         </property>
     </bean>
 
+    <!-- Customer scope define-->
+    <bean parent="fieldSetLevelMapping" id="customerDataWsDTOFieldSetLevelMapping">
+        <property name="dtoClass"
+                  value="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO"/>
+        <property name="levelMapping">
+            <map>
+                <entry key="BASIC"
+                       value="firstName,lastName,displayUid,customerId,defaultAddress,profilePicture"/>
+                <entry key="DEFAULT"
+                       value="BASIC,defaultBillingAddress,defaultShippingAddress,titleCode,currency,language"/>
+                <entry key="FULL"
+                       value="DEFAULT,deactivationDate,latestCartId,hasOrder,socialSites,title"/>
+            </map>
+        </property>
+    </bean>
 </beans>
