@@ -208,4 +208,10 @@
 				  type="java.util.Collection&lt;de.hybris.platform.trainingsocialsitecore.model.SocialSiteModel&gt;"/>
 		<property name="title" type="String"/>
 	</bean>
+
+	<!--Object which is used to return list of objects in this case we return list of CustomerDataWsDTO-->
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataListWsDTO">
+		<property name="customers"
+				  type="java.util.Collection&lt;de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO&gt;"/>
+	</bean>
 </beans>
