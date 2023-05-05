@@ -203,4 +203,11 @@
 			</map>
 		</property>
 	</bean>
+
+	<!-- Mapping CustomerData to CustomerDataWsDTO-->
+	<bean id="customersFieldMapper" parent="fieldMapper">
+		<property name="sourceClass" value="de.hybris.platform.commercefacades.user.data.CustomerData"/>
+		<property name="destClass"
+				  value="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO"/>
+	</bean>
 </beans>
