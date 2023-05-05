@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 @Controller
-// https://<localhost>:<port>/trainingsocialsitewebservices/v2/electronic(baseSiteId)/....
-@RequestMapping(value = "/{baseSiteId}")
+// https://<localhost>:<port>/trainingsocialsitewebservices/v2/electronic(baseSiteId)/customers...
+@RequestMapping(value = "/{baseSiteId}/customers")
 @Api(tags = "Customers") // that could be whatever we wanted
 public class TrainingCustomerController extends BaseCommerceController {
 
