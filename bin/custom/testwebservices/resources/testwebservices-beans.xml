@@ -188,4 +188,24 @@
 				  type="java.util.List&lt;de.hybris.platform.commercefacades.basesite.data.BaseSiteData>"/>
 	</bean>
 
+	<!-- Bean for CustomerWsDTO-->
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO">
+		<property name="defaultBillingAddress" type="de.hybris.platform.commercefacades.user.data.AddressData"/>
+		<property name="defaultShippingAddress" type="de.hybris.platform.commercefacades.user.data.AddressData"/>
+		<property name="titleCode" type="String"/>
+		<property name="firstName" type="String"/>
+		<property name="lastName" type="String"/>
+		<property name="currency" type="de.hybris.platform.commercefacades.storesession.data.CurrencyData"/>
+		<property name="language" type="de.hybris.platform.commercefacades.storesession.data.LanguageData"/>
+		<property name="displayUid" type="String"/>
+		<property name="customerId" type="String"/>
+		<property name="deactivationDate" type="java.util.Date"/>
+		<property name="defaultAddress" type="de.hybris.platform.commercefacades.user.data.AddressData"/>
+		<property name="latestCartId" type="String"/>
+		<property name="hasOrder" type="Boolean"/>
+		<property name="profilePicture" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
+		<property name="socialSites"
+				  type="java.util.Collection&lt;de.hybris.platform.trainingsocialsitecore.model.SocialSiteModel&gt;"/>
+		<property name="title" type="String"/>
+	</bean>
 </beans>
