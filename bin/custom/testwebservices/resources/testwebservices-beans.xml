@@ -218,13 +218,13 @@
 	<!--Object which is used to return list of objects in this case we return list of CustomerDataWsDTO-->
 	<bean class="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataListWsDTO">
 		<property name="customers"
-				  type="java.util.Collection&lt;de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO&gt;"/>
+				  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO&gt;"/>
 	</bean>
 
 	<!--Object which one we need to map CustomerDataListWsDTO to CustomerDataList when we send list of customers from controller-->
 	<bean class="de.hybris.platform.testwebservices.user.data.CustomerDataList">
 		<property name="customers"
-				  type="java.util.Collection&lt;de.hybris.platform.commercefacades.user.data.CustomerData&gt;"/>
+				  type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.CustomerData&gt;"/>
 	</bean>
 
 	<bean class="de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataListWsDTO">
