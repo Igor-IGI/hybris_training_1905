@@ -210,4 +210,11 @@
 		<property name="destClass"
 				  value="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO"/>
 	</bean>
+
+	<!-- Mapping CustomerData to CustomerDataWsDTO-->
+	<bean id="customersFieldMapper" parent="fieldMapper">
+		<property name="sourceClass" value="de.hybris.platform.trainingsocialsitefacade.data.SocialSiteData"/>
+		<property name="destClass"
+				  value="de.hybris.platform.commercewebservicescommons.dto.customer.SocialSiteDataWsDTO"/>
+	</bean>
 </beans>
