@@ -215,6 +215,6 @@
 	<bean id="customersFieldMapper" parent="fieldMapper">
 		<property name="sourceClass" value="de.hybris.platform.trainingsocialsitefacade.data.SocialSiteData"/>
 		<property name="destClass"
-				  value="de.hybris.platform.commercewebservicescommons.dto.customer.SocialSiteDataWsDTO"/>
+				  value="de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataWsDTO"/>
 	</bean>
 </beans>
