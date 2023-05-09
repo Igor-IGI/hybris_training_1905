@@ -209,6 +209,12 @@
 		<property name="title" type="String"/>
 	</bean>
 
+	<!-- Bean for SocialSiteDataWsDTO-->
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.customer.SocialSiteDataWsDTO">
+		<property name="socialSite" type="String"/>
+		<property name="url" type="String"/>
+	</bean>
+
 	<!--Object which is used to return list of objects in this case we return list of CustomerDataWsDTO-->
 	<bean class="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataListWsDTO">
 		<property name="customers"
