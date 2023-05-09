@@ -226,4 +226,9 @@
 		<property name="customers"
 				  type="java.util.Collection&lt;de.hybris.platform.commercefacades.user.data.CustomerData&gt;"/>
 	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataListWsDTO">
+		<property name="customers"
+				  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataWsDTO&gt;"/>
+	</bean>
 </beans>
