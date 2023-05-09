@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 @Controller
 // https://<localhost>:<port>/trainingsocialsitewebservices/v2/electronic(baseSiteId)/customers...
 @RequestMapping(value = "/{baseSiteId}/customer")
-@Api(tags = "Customers") // that could be whatever we wanted
+@Api(tags = "Customer") // that could be whatever we wanted
 public class CustomerController extends BaseCommerceController {
 
     private static final Logger LOGGER = Logger.getLogger(CustomerController.class);
