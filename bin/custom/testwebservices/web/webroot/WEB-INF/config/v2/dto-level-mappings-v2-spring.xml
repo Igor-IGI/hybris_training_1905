@@ -1561,7 +1561,7 @@
     <!-- SocialSite scope define-->
     <bean parent="fieldSetLevelMapping" id="socialSiteDataWsDTOFieldSetLevelMapping">
         <property name="dtoClass"
-                  value="de.hybris.platform.commercewebservicescommons.dto.customer.SocialSiteDataWsDTO"/>
+                  value="de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataWsDTO"/>
         <property name="levelMapping">
             <map>
                 <entry key="BASIC"
