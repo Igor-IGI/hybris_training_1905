@@ -31,7 +31,7 @@ public class CustomerDataPopulator implements Populator<CustomerModel, CustomerD
             target.setFirstName(customerData.get(0));
 
         // Get collection of SocialSiteModel and convert all objects from it whit using converter to new collection of SocialSiteData
-        target.setSocialSites(new ArrayList<>(Converters.convertAll(source.getSocialSites(), getSocialSiteConverter())));
+        target.setSocialSites(Converters.convertAll(source.getSocialSites(), getSocialSiteConverter()));
     }
 
     public Converter<SocialSiteModel, SocialSiteData> getSocialSiteConverter() {
