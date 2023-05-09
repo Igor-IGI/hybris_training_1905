@@ -57,9 +57,9 @@
         </c:if>
         <action:actions element="div"  parentComponent="${component}"/>
 
-			 <c:url var="testAction" value="${product.url}/cart/test"/>
+			 <c:url var="testAction" value="/cart/test"/>
 			 <form action="${testAction}" method="get">
-				 <button>xxxxxxxxxxxxxxxxxxxxxxxx</button>
+				 <button type="submit" class="btn btn-primary btn-block">xxxxxxxxxxxxxxxxxxxxxxxx</button>
 			 </form>
 
     </div>
