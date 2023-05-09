@@ -89,8 +89,10 @@
         <property name="levelMapping">
             <map>
                 <entry key="BASIC" value="id"/>
-                <entry key="DEFAULT" value="BASIC,firstName,lastName,titleCode,phone,cellphone,line1,line2,postalCode,country,region,district,town,defaultAddress"/>
-                <entry key="FULL" value="DEFAULT,companyName,country(FULL),region(FULL),title,email,visibleInAddressBook,formattedAddress,shippingAddress"/>
+                <entry key="DEFAULT"
+                       value="BASIC,firstName,lastName,titleCode,phone,cellphone,line1,line2,postalCode,country,region,district,town,defaultAddress"/>
+                <entry key="FULL"
+                       value="DEFAULT,companyName,country(FULL),region(FULL),title,email,visibleInAddressBook,formattedAddress,shippingAddress"/>
             </map>
         </property>
     </bean>
@@ -850,7 +852,6 @@
         </property>
     </bean>
 
-
     <bean parent="fieldSetLevelMapping" id="promotionListWsDTOFieldSetLevelMapping">
         <property name="dtoClass"
                   value="de.hybris.platform.commercewebservicescommons.dto.product.PromotionListWsDTO"/>
@@ -900,7 +901,6 @@
             </map>
         </property>
     </bean>
-
 
     <!-- Voucher -->
 
@@ -978,7 +978,6 @@
             </map>
         </property>
     </bean>
-
 
     <!-- Search -->
 
@@ -1550,11 +1549,27 @@
         <property name="levelMapping">
             <map>
                 <entry key="BASIC"
-                       value="firstName,lastName,displayUid,customerId,defaultAddress,profilePicture"/>
+                       value="firstName,lastName,displayUid,customerId,defaultAddress,profilePicture, socialSites(DEFAULT)"/>
                 <entry key="DEFAULT"
                        value="BASIC,defaultBillingAddress,defaultShippingAddress,titleCode,currency,language"/>
                 <entry key="FULL"
                        value="DEFAULT,deactivationDate,latestCartId,hasOrder,socialSites,title"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- SocialSite scope define-->
+    <bean parent="fieldSetLevelMapping" id="socialSiteDataWsDTOFieldSetLevelMapping">
+        <property name="dtoClass"
+                  value="de.hybris.platform.commercewebservicescommons.dto.customer.SocialSiteDataWsDTO"/>
+        <property name="levelMapping">
+            <map>
+                <entry key="BASIC"
+                       value="socialSite,url"/>
+                <entry key="DEFAULT"
+                       value="BASIC"/>
+                <entry key="FULL"
+                       value="BASIC"/>
             </map>
         </property>
     </bean>
