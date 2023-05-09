@@ -231,4 +231,9 @@
 		<property name="customers"
 				  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataWsDTO&gt;"/>
 	</bean>
+
+	<bean class="de.hybris.platform.trainingsocialsitefacade.data.SocialSiteListData">
+		<property name="socialSites"
+				  type="java.util.List&lt;de.hybris.platform.trainingsocialsitefacade.data.SocialSiteData&gt;"/>
+	</bean>
 </beans>
