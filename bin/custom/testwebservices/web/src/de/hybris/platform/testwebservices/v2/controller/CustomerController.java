@@ -38,7 +38,7 @@ public class CustomerController extends BaseCommerceController {
     @RequestMapping(value = "/{customerID}/customer", method = RequestMethod.GET)
     @ApiOperation(nickname = "getCustomer", value = "Get a Customer details", notes = "Return a single costumer",
             authorizations = {@Authorization(value = "oauth2_client_credential")})
-    @ApiBaseSiteIdAndUserIdParam
+    @ApiBaseSiteIdParam
     @ResponseBody
     public CustomerDataWsDTO getCustomer(
             @ApiParam(value = "customer ID", required = true)
