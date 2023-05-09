@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 
 @Controller
 // https://<localhost>:<port>/trainingsocialsitewebservices/v2/electronic(baseSiteId)/customers...
-@RequestMapping(value = "/{baseSiteId}/customers")
+@RequestMapping(value = "/{baseSiteId}/customer")
 @Api(tags = "Customers") // that could be whatever we wanted
 public class CustomerController extends BaseCommerceController {
 
@@ -53,12 +53,12 @@ public class CustomerController extends BaseCommerceController {
     }
 
     @Secured("ROLE_TRUSTED_CLIENT")
-    @RequestMapping(value = "/customerswsdatadto", method = RequestMethod.GET)
+    @RequestMapping(value = "/customers", method = RequestMethod.GET)
     @ApiOperation(nickname = "getCustomers", value = "Get a list of customers", notes = "Return a list of customers",
             authorizations = {@Authorization(value = "oauth2_client_credential")})
     @ApiBaseSiteIdParam
     @ResponseBody
-    public CustomerDataListWsDTO getCustomersCustomerDataWsDTO(
+    public CustomerDataListWsDTO getCustomers(
             @ApiParam(value = "Response configurator. This is the list that should be returned in the response body.",
                     allowableValues = "BASIC, DEFAULT, FULL")
             @RequestParam(defaultValue = "DEFAULT_FIELD_SET") final String scope) {
