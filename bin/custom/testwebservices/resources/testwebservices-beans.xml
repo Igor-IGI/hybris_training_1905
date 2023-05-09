@@ -188,6 +188,12 @@
 				  type="java.util.List&lt;de.hybris.platform.commercefacades.basesite.data.BaseSiteData>"/>
 	</bean>
 
+	<!-- Bean for SocialSiteDataWsDTO-->
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataWsDTO">
+		<property name="socialSite" type="String"/>
+		<property name="url" type="String"/>
+	</bean>
+
 	<!-- Bean for CustomerWsDTO-->
 	<bean class="de.hybris.platform.commercewebservicescommons.dto.customer.CustomerDataWsDTO">
 		<property name="defaultBillingAddress" type="de.hybris.platform.commercefacades.user.data.AddressData"/>
@@ -205,14 +211,8 @@
 		<property name="hasOrder" type="Boolean"/>
 		<property name="profilePicture" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
 		<property name="socialSites"
-				  type="java.util.List&lt;de.hybris.platform.trainingsocialsitecore.model.SocialSiteDataWsDTO&gt;"/>
+				  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.socialSite.SocialSiteDataWsDTO&gt;"/>
 		<property name="title" type="String"/>
-	</bean>
-
-	<!-- Bean for SocialSiteDataWsDTO-->
-	<bean class="de.hybris.platform.commercewebservicescommons.dto.customer.SocialSiteDataWsDTO">
-		<property name="socialSite" type="String"/>
-		<property name="url" type="String"/>
 	</bean>
 
 	<!--Object which is used to return list of objects in this case we return list of CustomerDataWsDTO-->
