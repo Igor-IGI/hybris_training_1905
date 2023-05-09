@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ITrainingSocialSiteCustomDao {
 
-    Collection<CustomerModel> getCustomers();
+    List<CustomerModel> getCustomers();
     CustomerModel getCustomerById(String uId);
 }

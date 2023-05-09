@@ -56,5 +56,11 @@
                 </a>
         </c:if>
         <action:actions element="div"  parentComponent="${component}"/>
+
+			 <c:url var="testAction" value="/cart/test"/>
+			 <form action="${testAction}" method="get">
+				 <button type="submit" class="btn btn-primary btn-block">xxxxxxxxxxxxxxxxxxxxxxxx</button>
+			 </form>
+
     </div>
 </div>

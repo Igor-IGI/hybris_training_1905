@@ -16,8 +16,11 @@ import de.hybris.platform.commercefacades.order.data.OrderEntryData;
 import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
+import de.hybris.platform.commercefacades.user.data.CustomerData;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
+import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
+import de.hybris.platform.trainingsocialsitefacade.facade.ITrainingSocialSiteFacade;
 import de.hybris.platform.util.Config;
 import de.hybris.platform.trainingsocialsitestorefront.controllers.ControllerConstants;
 
@@ -67,6 +70,9 @@ public class AddToCartController extends AbstractController
 
 	@Resource(name = "groupCartModificationListPopulator")
 	private GroupCartModificationListPopulator groupCartModificationListPopulator;
+
+	@Resource(name = "trainingSocialSiteFacade")
+	private ITrainingSocialSiteFacade facade;
 
 	@RequestMapping(value = "/cart/add", method = RequestMethod.POST, produces = "application/json")
 	public String addToCart(@RequestParam("productCodePost") final String code, final Model model,
@@ -330,5 +336,25 @@ public class AddToCartController extends AbstractController
 	protected boolean isValidQuantity(final OrderEntryData cartEntry)
 	{
 		return cartEntry.getQuantity() != null && cartEntry.getQuantity().longValue() >= 1L;
+	}
+
+	@RequestMapping(value = "/cart/test", method = RequestMethod.GET)
+	protected String test() {
+		for (CustomerData model : getFacade().getCustomers())
+		{
+			System.out.println("Customer id: " + model.getCustomerId() +
+					"Customer firstname: " + model.getFirstName() +
+					"Customer lastname: " + model.getLastName());
+		}
+		getFacade().getCustomerById("8796098920452");
+		return REDIRECT_PREFIX + "/cart";
+	}
+
+	public ITrainingSocialSiteFacade getFacade() {
+		return facade;
+	}
+
+	public void setFacade(ITrainingSocialSiteFacade facade) {
+		this.facade = facade;
 	}
 }
