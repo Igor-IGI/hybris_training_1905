@@ -21,9 +21,9 @@ import javax.annotation.Resource;
 // https://<localhost>:<port>/trainingsocialsitewebservices/v2/electronic(baseSiteId)/customers...
 @RequestMapping(value = "/{baseSiteId}/customers")
 @Api(tags = "Customers") // that could be whatever we wanted
-public class TrainingCustomerController extends BaseCommerceController {
+public class CustomerController extends BaseCommerceController {
 
-    private static final Logger LOGGER = Logger.getLogger(TrainingCustomerController.class);
+    private static final Logger LOGGER = Logger.getLogger(CustomerController.class);
     @Resource(name = "trainingSocialSiteFacade")
     private TrainingSocialSiteFacadeImpl trainingSocialSiteFacade;
 
