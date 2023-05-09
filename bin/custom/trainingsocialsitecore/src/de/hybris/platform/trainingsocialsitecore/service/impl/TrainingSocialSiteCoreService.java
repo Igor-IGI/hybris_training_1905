@@ -15,8 +15,7 @@ public class TrainingSocialSiteCoreService implements ITrainingSocialSiteCoreSer
 
     @Override
     public List<CustomerModel> getCutomers() {
-        final List<CustomerModel> customers = (List<CustomerModel>) getTrainingSocialSiteDao().getCustomers();
-        return customers;
+        return getTrainingSocialSiteDao().getCustomers();
     }
 
     @Override
