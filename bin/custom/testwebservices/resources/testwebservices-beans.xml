@@ -205,7 +205,7 @@
 		<property name="hasOrder" type="Boolean"/>
 		<property name="profilePicture" type="de.hybris.platform.commercefacades.product.data.ImageData"/>
 		<property name="socialSites"
-				  type="java.util.Collection&lt;de.hybris.platform.trainingsocialsitecore.model.SocialSiteModel&gt;"/>
+				  type="java.util.List&lt;de.hybris.platform.trainingsocialsitecore.model.SocialSiteDataWsDTO&gt;"/>
 		<property name="title" type="String"/>
 	</bean>
 
