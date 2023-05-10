@@ -40,4 +40,7 @@
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
         <property name="modelService" ref="modelService"/>
     </bean>
+
+    <bean id="trainingFqaService"
+          class="de.hybris.platform.trainingsocialsitecore.service.impl.TrainingFaqCoreService"/>
 </beans>
