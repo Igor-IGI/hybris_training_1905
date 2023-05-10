@@ -11,24 +11,27 @@ import java.util.*;
 import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
 
 public class TrainingSocialSiteCustomerDaoImpl extends AbstractItemDao implements ITrainingSocialSiteCustomDao {
-    private final String CUSTOMER_QUERY = "SELECT {" + CustomerModel.PK + "}" + "FROM {" +
-            CustomerModel._TYPECODE + " AS customers}";
+    private final String CUSTOMER_QUERY = "SELECT {" + CustomerModel.PK + "} " +
+            "FROM {" + CustomerModel._TYPECODE + " AS customers}";
 
-    private final String CUSTOMER_BY_ID_QUERY = "SELECT {" + CustomerModel.PK + "}" + "FROM {"
-            + CustomerModel._TYPECODE + "} WHERE {" + CustomerModel.UID + "=?customerId}";
+    private final String CUSTOMER_BY_ID_QUERY = "SELECT {" + CustomerModel.PK + "} " +
+            "FROM {" + CustomerModel._TYPECODE + "} " +
+            "WHERE {" + CustomerModel.PK + "} = ?customerId";
 
     @Override
     public List<CustomerModel> getCustomers() {
+        final SearchResult<CustomerModel> customersModelSearchResult = getFlexibleSearchService().search(CUSTOMER_QUERY);
+        return customersModelSearchResult.getResult() == null ? Collections.emptyList() : customersModelSearchResult.getResult();
+    }
+
+    //This is example of another usage to get customers
+    private List<CustomerModel> GetCustomers() {
         final StringBuilder builder = new StringBuilder();
         builder.append("SELECT {c:").append(CustomerModel.PK).append("}");
         builder.append("FROM {").append(CustomerModel._TYPECODE).append(" AS c}");
 
-        final FlexibleSearchQuery query = new FlexibleSearchQuery(CUSTOMER_QUERY);
-
-        return flexibleSearchService.<CustomerModel>search(query).getResult();
-//        var result = flexibleSearchService.<CustomerModel>search(query).getResult();
-//        final SearchResult<CustomerModel> customersModelSearchResult = getFlexibleSearchService().search(CUSTOMER_QUERY);
-//        return customersModelSearchResult.getResult() == null ? Collections.emptyList() : customersModelSearchResult.getResult();
+        final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(builder.toString());
+        return getFlexibleSearchService().<CustomerModel>search(flexibleSearchQuery).getResult();
     }
 
     @Override
@@ -43,4 +46,19 @@ public class TrainingSocialSiteCustomerDaoImpl extends AbstractItemDao implement
         return customerModelSearchResult.getResult().get(0);
     }
 
+    //This is example of another usage to get customer
+    private CustomerModel getCustomer(String customerId) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT {").append(CustomerModel.PK).append("} ");
+        sb.append("FROM {").append(CustomerModel._TYPECODE).append("} ");
+        sb.append("WHERE {").append(CustomerModel.PK).append("} = ?customerId");
+
+        final Map<String, Object> parameter = new HashMap<>();
+        parameter.put("customerId", customerId);
+
+        final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(sb.toString());
+        flexibleSearchQuery.addQueryParameters(parameter);
+
+        return getFlexibleSearchService().<CustomerModel>search(flexibleSearchQuery).getResult().get(0);
+    }
 }
