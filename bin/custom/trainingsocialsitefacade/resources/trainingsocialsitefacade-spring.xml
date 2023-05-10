@@ -47,10 +47,22 @@
         <property name="socialSiteConverter" ref="socialSiteDataConverter"/>
     </bean>
 
+    <alias name="defaultWebServiceCustomerDataPopulator" alias="webServiceCustomerDataPopulator"/>
+    <bean id="defaultWebServiceCustomerDataPopulator"
+          class="de.hybris.platform.trainingsocialsitefacade.populators.WebServiceCustomerDataPopulator"
+          parent="customerPopulator">
+        <property name="socialSiteConverter" ref="socialSiteDataConverter"/>
+    </bean>
+
     <!--Add cutomerDatapPopulator to default OOTB customerPopulator-->
     <bean parent="modifyPopulatorList">
         <property name="list" ref="customerConverter"/>
         <property name="add" ref="customerDataPopulator"/>
+    </bean>
+
+    <bean parent="modifyPopulatorList">
+        <property name="list" ref="customerConverter"/>
+        <property name="add" ref="webServiceCustomerDataPopulator"/>
     </bean>
 
     <!--Spring bean for custom make customerConverter which one don't need because we extend existing OOTB-->
