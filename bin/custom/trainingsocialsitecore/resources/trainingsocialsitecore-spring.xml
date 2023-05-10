@@ -33,4 +33,11 @@
     <!--Service bean-->
     <bean id="trainingSocialSiteService"
           class="de.hybris.platform.trainingsocialsitecore.service.impl.TrainingSocialSiteCoreService"/>
+
+    <alias name="trainingFaqDaoImpl" alias="trainingFaqDao"/>
+    <bean id="trainingFaqDaoImpl"
+          class="de.hybris.platform.trainingsocialsitecore.dao.impl.TrainingFaqDaoImpl">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+        <property name="modelService" ref="modelService"/>
+    </bean>
 </beans>
