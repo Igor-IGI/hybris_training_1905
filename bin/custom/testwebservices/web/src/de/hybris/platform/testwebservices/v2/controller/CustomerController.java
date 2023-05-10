@@ -45,7 +45,7 @@ public class CustomerController extends BaseCommerceController {
             @PathVariable final String customerID,
             @ApiParam(value = "Response configurator. This is the single costumer hath shut be returned in the response body.",
                     allowableValues = "BASIC, DEFAULT, FULL")
-            @RequestParam(defaultValue = "DEFAULT_FIELD_SET") final String scope) {
+            @RequestParam(defaultValue = DEFAULT_FIELD_SET) final String scope) {
 
         LOGGER.info("Customer is: " + customerID);
 
@@ -61,7 +61,7 @@ public class CustomerController extends BaseCommerceController {
     public CustomerDataListWsDTO getCustomers(
             @ApiParam(value = "Response configurator. This is the list that should be returned in the response body.",
                     allowableValues = "BASIC, DEFAULT, FULL")
-            @RequestParam(defaultValue = "DEFAULT_FIELD_SET") final String scope) {
+            @RequestParam(defaultValue = DEFAULT_FIELD_SET) final String scope) {
 
         final CustomerDataList customerDataList = new CustomerDataList();
         customerDataList.setCustomers(trainingSocialSiteFacade.getCustomers());
