@@ -51,5 +51,23 @@
                 </attribute>
             </attributes>
         </itemtype>
+
+        <itemtype code="Faq" autocreate="true" generate="true"
+                  jaloclass="de.hybris.platform.trainingsocialsitecore.jalo.Faq">
+            <description>This is the class which represent FAQ, what mens that it store title and some
+                content(description) about this title.
+            </description>
+            <deployment table="faq" typecode="24244"/>
+            <attributes>
+                <attribute qualifier="title" type="java.lang.String">
+                    <modifiers read="true" write="true" optional="true" unique="false"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="content" type="java.lang.String">
+                    <modifiers read="true" write="true" optional="true" unique="false"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
     </itemtypes>
 </items>
