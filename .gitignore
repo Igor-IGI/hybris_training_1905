@@ -13,3 +13,9 @@ config/*
 # Ignore the all subdirectories and subfiles of bin folder expect custom folder
 bin/*
 !bin/custom/
+
+#Ignore .class and .java files trainingsocialsitefacade and trainingsocialsitecore
+ bin/**/trainingsocialsitecore/**/*.class
+ bin/**/trainingsocialsitecore/jalo/*.java
+ bin/**/trainingsocialsitefacade/**/*.java
+ bin/**/trainingsocialsitefacade/jalo/*.java
