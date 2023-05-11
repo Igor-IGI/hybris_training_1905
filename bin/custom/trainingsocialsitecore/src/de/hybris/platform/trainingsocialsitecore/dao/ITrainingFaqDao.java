@@ -7,5 +7,4 @@ import java.util.List;
 public interface ITrainingFaqDao {
 
     public List<FaqModel> getFaqs();
-    public void putFaq(FaqModel faqModel);
 }
