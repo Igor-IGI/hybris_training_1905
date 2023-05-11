@@ -13,7 +13,6 @@
         <constructor-arg ref="trainingsocialsitecoreService"/>
     </bean>
 
-
     <bean id="trainingsocialsitecoreService"
           class="de.hybris.platform.trainingsocialsitecore.service.impl.DefaultTrainingsocialsitecoreService">
         <!-- setter injection example -->
@@ -43,5 +42,5 @@
     </bean>
 
     <bean id="trainingFqaService"
-          class="de.hybris.platform.trainingsocialsitecore.service.impl.TrainingFaqCoreServiceImpl"/>
+          class="de.hybris.platform.trainingsocialsitecore.service.impl.TrainingFaqCoreService"/>
 </beans>
