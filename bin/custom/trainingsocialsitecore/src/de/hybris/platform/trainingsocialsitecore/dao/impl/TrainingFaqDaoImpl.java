@@ -60,12 +60,15 @@ public class TrainingFaqDaoImpl extends AbstractItemDao implements ITrainingFaqD
             FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(FAQ_BY_ID_QUERY);
             flexibleSearchQuery.addQueryParameters(parameter);
 
-            return getFlexibleSearchService().<FaqModel>search(flexibleSearchQuery).getResult().get(0);
+            if (!getFlexibleSearchService().search(flexibleSearchQuery).getResult().isEmpty())
+                return getFlexibleSearchService().<FaqModel>search(flexibleSearchQuery).getResult().get(0);
+            else
+                LOG.debug("No FAQ item was found with search pk: " + customerID);
 
         } catch (Exception e)
         {
             LOG.error(e.getMessage(), e);
-            return null;
         }
+        return null;
     }
 }
