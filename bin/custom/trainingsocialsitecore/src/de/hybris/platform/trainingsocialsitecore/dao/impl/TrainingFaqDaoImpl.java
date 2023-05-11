@@ -16,11 +16,19 @@ import java.util.List;
 public class TrainingFaqDaoImpl extends AbstractItemDao implements ITrainingFaqDao {
 
     private static final Logger LOG = LoggerFactory.getLogger(TrainingFaqDaoImpl.class);
-
+    private final String FAQS_QUERY = "SELECT {" + FaqModel.PK + "} " + "FROM {" + FaqModel._TYPECODE + "}";
 
     @Override
     public List<FaqModel> getFaqs() {
-      return null;
+        try
+        {
+            final SearchResult<FaqModel> searchResult = getFlexibleSearchService().search(FAQS_QUERY);
+            return searchResult == null ? Collections.emptyList() : searchResult.getResult();
+        } catch (Exception e)
+        {
+            LOG.error(e.getMessage(), e);
+            return Collections.emptyList();
+        }
     }
 
     @Override
