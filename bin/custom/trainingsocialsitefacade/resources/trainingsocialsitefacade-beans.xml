@@ -14,4 +14,9 @@
 				  type="java.util.Collection&lt;de.hybris.platform.trainingsocialsitefacade.data.SocialSiteData&gt;"/>
 	</bean>
 
+	<bean class="de.hybris.platform.trainingsocialsitefacade.data.FaqData">
+		<property name="title" type="java.lang.String"/>
+		<property name="content" type="java.lang.String"/>
+	</bean>
+
 </beans>
