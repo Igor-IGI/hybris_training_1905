@@ -48,4 +48,24 @@ public class TrainingFaqDaoImpl extends AbstractItemDao implements ITrainingFaqD
             LOG.error(e.getMessage(), e);
         }
     }
+
+    private FaqModel getFaq(String customerID) {
+        validateParameterNotNull(customerID, "Customer id cant be empty!");
+
+        try
+        {
+            final Map<String, Object> parameter = new HashMap<>();
+            parameter.put("customerID", customerID);
+
+            FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(FAQ_BY_ID_QUERY);
+            flexibleSearchQuery.addQueryParameters(parameter);
+
+            return getFlexibleSearchService().<FaqModel>search(flexibleSearchQuery).getResult().get(0);
+
+        } catch (Exception e)
+        {
+            LOG.error(e.getMessage(), e);
+            return null;
+        }
+    }
 }
