@@ -32,43 +32,4 @@ public class TrainingFaqDaoImpl extends AbstractItemDao implements ITrainingFaqD
             return Collections.emptyList();
         }
     }
-
-    @Override
-    public void putFaq(FaqModel faqModel) {
-
-        try
-        {
-            if (faqModel != null)
-                getModelService().save(faqModel);
-            else
-                throw new NullPointerException("FaqModel can't be null!");
-
-        } catch (Exception e)
-        {
-            LOG.error(e.getMessage(), e);
-        }
-    }
-
-    private FaqModel getFaq(String customerID) {
-        validateParameterNotNull(customerID, "Customer id cant be empty!");
-
-        try
-        {
-            final Map<String, Object> parameter = new HashMap<>();
-            parameter.put("customerID", customerID);
-
-            FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(FAQ_BY_ID_QUERY);
-            flexibleSearchQuery.addQueryParameters(parameter);
-
-            if (!getFlexibleSearchService().search(flexibleSearchQuery).getResult().isEmpty())
-                return getFlexibleSearchService().<FaqModel>search(flexibleSearchQuery).getResult().get(0);
-            else
-                LOG.debug("No FAQ item was found with search pk: " + customerID);
-
-        } catch (Exception e)
-        {
-            LOG.error(e.getMessage(), e);
-        }
-        return null;
-    }
 }
