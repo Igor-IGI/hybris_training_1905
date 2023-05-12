@@ -15,7 +15,7 @@ bin/*
 !bin/custom/
 
 #Ignore .class and .java files trainingsocialsitefacade and trainingsocialsitecore
-bin/**/trainingsocialsitecore/**/*.class
-bin/**/trainingsocialsitecore/jalo/*.java
-bin/**/trainingsocialsitefacade/**/*.class
-bin/**/trainingsocialsitefacade/jalo/*.java
+bin/**/classes/**/trainingsocialsitecore/**/*.class
+bin/**/gensrc/**/trainingsocialsitecore/jalo/*.java
+bin/**/classes/**/trainingsocialsitefacade/**/*.class
+bin/**/gensrc/**/trainingsocialsitefacade/jalo/*.java
