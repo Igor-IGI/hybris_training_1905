@@ -12,14 +12,14 @@ import java.util.List;
 
 public class TrainingFaqFacadeImpl implements ITrainingFaqFacade {
 
-    private Converter<FaqModel, FaqData> converter;
+    private Converter<FaqModel, FaqData> faqConverter;
 
-    public Converter<FaqModel, FaqData> getConverter() {
-        return converter;
+    public Converter<FaqModel, FaqData> getFaqConverter() {
+        return faqConverter;
     }
 
-    public void setConverter(Converter<FaqModel, FaqData> converter) {
-        this.converter = converter;
+    public void setFaqConverter(Converter<FaqModel, FaqData> faqConverter) {
+        this.faqConverter = faqConverter;
     }
 
     @Resource(name = "trainingFqaService")
@@ -35,6 +35,6 @@ public class TrainingFaqFacadeImpl implements ITrainingFaqFacade {
 
     @Override
     public List<FaqData> getFaq() {
-        return Converters.convertAll(getTrainingFaqCoreService().getFaqs(), getConverter());
+        return Converters.convertAll(getTrainingFaqCoreService().getFaqs(), getFaqConverter());
     }
 }
