@@ -104,4 +104,10 @@
             </list>
         </property>
     </bean>
+
+    <!-- FAQ Populator -->
+    <alias name="defaultTrainingFaqDataPopulator" alias="trainingFaqDataPopulator"/>
+    <bean id="defaultTrainingFaqDataPopulator"
+          class="de.hybris.platform.trainingsocialsitefacade.populators.FaqDataPopulator">
+    </bean>
 </beans>
