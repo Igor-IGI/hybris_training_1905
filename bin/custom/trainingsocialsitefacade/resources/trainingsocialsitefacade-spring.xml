@@ -83,4 +83,14 @@
         <property name="trainingCustomerConverter" ref="customerConverter"/>
         <property name="courseService" ref="trainingSocialSiteService"/>
     </bean>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~ FAQ ~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <!-- FAQ FacadeImpl -->
+    <alias name="defaultTrainingFaqFacade" alias="trainingFaqFacade"/>
+    <bean id="defaultTrainingFaqFacade"
+          class="de.hybris.platform.trainingsocialsitefacade.facade.impl.TrainingFaqFacadeImpl">
+        <property name="faqConverter" ref="trainingFaqConverter"/>
+        <property name="trainingFaqCoreService" ref="trainingFqaService"/>
+    </bean>
 </beans>
