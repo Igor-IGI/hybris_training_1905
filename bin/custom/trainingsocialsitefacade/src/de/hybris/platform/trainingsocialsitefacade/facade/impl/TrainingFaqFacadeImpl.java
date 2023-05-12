@@ -35,6 +35,6 @@ public class TrainingFaqFacadeImpl implements ITrainingFaqFacade {
 
     @Override
     public List<FaqData> getFaq() {
-        return null;
+        return Converters.convertAll(getTrainingFaqCoreService().getFaqs(), getConverter());
     }
 }
