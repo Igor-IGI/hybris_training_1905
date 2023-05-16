@@ -1,0 +1,4 @@
+INSERT_UPDATE Faq; title[unique = true]; content
+                 ; Title 1              ; Content 1
+                 ; Title 2              ; Content 2
+                 ; Title 3              ; Content 3
