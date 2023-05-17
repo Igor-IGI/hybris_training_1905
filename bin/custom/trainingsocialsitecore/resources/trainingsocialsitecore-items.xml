@@ -72,7 +72,7 @@
 
         <!-- FAQ cms template component -->
         <itemtype code="FaqTemplateComponent"
-                  jaloclass="de.hybris.platform.trainingsocialsitecore.components.FaqTemplateComponent"
+                  jaloclass="de.hybris.platform.trainingsocialsitecore.jalo.FaqTemplateComponent"
                   autocreate="true" generate="true" extends="SimpleCMSComponent">
             <attributes>
                 <attribute qualifier="title" type="java.lang.String">
