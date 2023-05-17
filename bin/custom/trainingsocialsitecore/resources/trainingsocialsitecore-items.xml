@@ -69,5 +69,19 @@
                 </attribute>
             </attributes>
         </itemtype>
+
+        <!-- FAQ cms template component -->
+        <itemtype code="FaqTemplateComponent"
+                  jaloclass="de.hybris.platform.trainingsocialsitecore.components.FaqTemplateComponent"
+                  autocreate="true" generate="true" extends="SimpleCMSComponent">
+            <attributes>
+                <attribute qualifier="title" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="content" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
     </itemtypes>
 </items>
