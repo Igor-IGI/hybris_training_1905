@@ -15,7 +15,26 @@ bin/*
 !bin/custom/
 
 #Ignore .class and .java files trainingsocialsitefacade and trainingsocialsitecore
-bin/**/classes/**/trainingsocialsitecore/**/*.class
-bin/**/gensrc/**/trainingsocialsitecore/jalo/*.java
-bin/**/classes/**/trainingsocialsitefacade/**/*.class
-bin/**/gensrc/**/trainingsocialsitefacade/jalo/*.java
+#bin/**/classes/**/trainingsocialsitecore/**/*.class
+#bin/custom/trainingsocialsitecore/classes/de/hybris/platform/trainingsocialsitecore/constants/*.class
+#bin/**/gensrc/**/trainingsocialsitecore/jalo/*.java
+bin/**/gensrc/de/hybris/platform/trainingsocialsitecore/
+bin/**/classes/de/hybris/platform/trainingsocialsitecore/
+
+
+bin/**/gensrc/de/hybris/platform/trainingsocialsitefacade/
+bin/**/classes/de/hybris/platform/trainingsocialsitefacade/
+
+#bin/**/classes/**/trainingsocialsitefacade/**/*.class
+#bin/**/gensrc/**/trainingsocialsitefacade/jalo/*.java
+
+#bin/**/trainingsocialsitestorefront/**/*.class
+bin/**/gensrc/de/hybris/platform/trainingsocialsitestorefront/
+bin/**/classes/de/hybris/platform/trainingsocialsitestorefront/
+
+#bin/**/testwebservices/constants/
+
+bin/**/gensrc/de/hybris/platform/testwebservices/
+bin/**/classes/de/hybris/platform/testwebservices/
+#bin/**/gensrc/**/testwebservices/jalo/*.java
+#bin/**/gensrc/**/testwebservices/jalo/**/*.class
