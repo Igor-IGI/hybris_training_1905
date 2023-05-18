@@ -27,7 +27,7 @@ public class FaqPageController extends AbstractPageController {
     public String getFaqs(final Model model) throws CMSItemNotFoundException {
 
         List<FaqData> faqs = faqFacade.getFaq();
-        model.addAttribute("faq", faqs);
+        model.addAttribute("faqs", faqs);
 
         // This will retrieve the created page by label which one we declared as "faqCMSPage"
         final ContentPageModel faqCMSPage = getContentPageForLabelOrId(FAQ_CMS_PAGE);
