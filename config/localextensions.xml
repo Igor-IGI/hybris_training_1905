@@ -100,6 +100,6 @@
         <extension name='trainingsocialsitefacade'/>
         <extension name='trainingsocialsitestorefront'/>
         <extension name='testwebservices'/>
-<!--        <extension name='trainingsocialsitewebservices'/>-->
+        <extension name='trainingbackoffice'/>
     </extensions>
 </hybrisconfig>
