@@ -6,7 +6,7 @@ $productCV = catalogVersion(catalog(id[default=$productCatalog]), version[defaul
 
 # FAQ page template
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]; name              ; frontendTemplateName; restrictedPageTypes(code); active[default = true]
-                          ;                          ; FaqPageTemplate   ; FAQ Page Template ; faq/FaqPage         ; ContentPage
+                          ;                          ; FaqPageTemplate   ; FAQ Page Template ; faq/FaqLayoutPage   ; ContentPage
 
 # There are a standard set of slots and a number of specific slots for each template.
 # Standard slots are SiteLogo, HeaderLinks, MiniCart and NavigationBar (that all appear in the Header), and the Footer.  8796125824052  8796125856820
@@ -43,9 +43,17 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name               ; active; cmsComponents(uid, $contentCV)
                          ;                          ; FaqParagraphSlot  ; Faq Paragraph Slot ; true  ; FaqComponent
 
+# Custom component
+INSERT_UPDATE FaqTemplateComponent; $contentCV[unique = true]; uid[unique = true]  ; name                   ;
+                                  ;                          ; FaqListCMSComponent ; Faq Template Component ;
+
 # Create component and link them with content slot
-INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]; name                    ; &componentRef; ; ; ; content  ;
-                                   ;                          ; FaqComponent      ; Faq Heading information ; FaqComponent ; ; ; ; la la la ;
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]; name                    ; &componentRef; ; ; ; content;
+                                   ;                          ; FaqComponent      ; Faq Heading information ; FaqComponent ; ; ; ; test 1 ;
+
+# This component include jsp file
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]  ; name                  ; page
+                                 ;                          ; FaqListJspComponent ; JSP Include Component ; /WEB-INF/views/responsive/cms/cmsfaqlistcomponent.jsp
 
 # Create the link component
 # Same link we must defiine in the controller
@@ -53,10 +61,8 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
 INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]; name     ; url         ; category(code, $productCV); target(code)[default = 'sameWindow']; ;
                               ;                          ; FaqLink           ; Faq Link ; /custom-faq ;                           ;                                     ; ;
 
-
 UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]; linkName[lang = en]
                        ;                          ; FaqLink           ; "FAQ"
-
 
 ## Create navigation node
 #INSERT_UPDATE CMSNavigationNode; uid[unique = true]   ; $contentCV[unique = true]; name                ; &nodeRef;
@@ -65,7 +71,6 @@ UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]; linkName
 ## Create navigation node and add the cms link component
 #INSERT_UPDATE CMSNavigationNode; uid[unique = true]       ; $contentCV[unique = true]; name       ; parent(uid, $contentCV); &nodeRef                 ; children(uid, $contentCV)
 #                               ; ApparelUKCategoryNavNode ;                          ; Categories ; ApparelUKNavNode       ; ApparelUKCategoryNavNode ; BrandsNavNode,StreetwearNavigationNode,SnowNavigationNode,AccessoriesNavigationNode,StreetwearYouthNavNode,FaqNavigationNavNode
-
 
 
 #INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name ; children(uid, $contentCV)[mode = append]
@@ -77,12 +82,10 @@ UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]; linkName
 #
 
 
-
 ## Entries of the above navigation node
 #INSERT_UPDATE CMSNavigationEntry; uid[unique = true]; $contentCV[unique = true]; name                      ; navigationNode(&nodeRef); item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV);
 #                                ; FaqtNavNodeEntry  ;                          ; Faq Navigation Node Entry ; FaqNavigationNavNode    ; FaqLink                                                ;
-
+#
 ## Add the language for the newly created navigation node and cms link component
 #UPDATE CMSNavigationNode; $contentCV[unique = true]; uid[unique = true]   ; title[lang = en]
 #                        ;                          ; FaqNavigationNavNode ; "FAQ"
-#
