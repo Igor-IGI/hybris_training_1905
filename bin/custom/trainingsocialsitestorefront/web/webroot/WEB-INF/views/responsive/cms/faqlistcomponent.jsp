@@ -4,23 +4,32 @@
 <%@ taglib prefix="storepickup" tagdir="/WEB-INF/tags/responsive/storepickup" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div class="faq_list">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<div class="accordion" id="accordionExample">
     <c:forEach items="${faqs}" var="faqItem" varStatus="loop">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading${loop.index}">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index}"
-                            aria-expanded="true" aria-controls="collapse${loop.index}">
-                            ${faqItem.title}
-                    </button>
-                    <div id="collapse${loop.index}" class="accordion-collapse collapse show" aria-labelledby="heading${loop.index}"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                                ${faqItem.content}
-                        </div>
-                    </div>
-                </h2>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="heading${loop.index}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse${loop.index}" aria-expanded="false"
+                    aria-controls="collapse${loop.index}">
+                    ${faqItem.title}
+            </button>
+        </h2>
+        <div id="collapse${loop.index}" class="accordion-collapse collapse" aria-labelledby="heading${loop.index}">
+            <div class="accordion-body">
+                    ${faqItem.content}
             </div>
         </div>
-    </c:forEach>
+        </c:forEach>
+    </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous">
+</script>
