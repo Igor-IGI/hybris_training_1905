@@ -2,12 +2,66 @@
 <!--
  Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved
 -->
-<config xmlns="http://www.hybris.com/cockpit/config">
+<config xmlns="http://www.hybris.com/cockpit/config"
+        xmlns:et="http://www.hybris.com/cockpitng/config/explorertree"
+        xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+        xmlns:list-view="http://www.hybris.com/cockpitng/component/listView"
+        xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch"
+        xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch">
 
-	<!-- trainingbackoffice UI configuration should be provided here -->
 
-	<!--<context component="component-code" module="trainingbackoffice">-->
-		<!--Please check documentation for code snippets for specific components-->
-	<!--</context>-->
+    <!-- Filter tree (tree -> node (faqNode) -> type(faqType)) -->
+    <context component="explorer-tree" merge-by="module">
+		<et:explorer-tree>
+			<et:navigation-node id="trainingbackoffice.explorer.treenode.faqNode">
+				<et:type-node id="trainingbackoffice.explorer.typenode.faqType" code="Faq"/>
+			</et:navigation-node>
+		</et:explorer-tree>
+	</context>
 
+    <!-- List view table column header -->
+    <context type="Faq" component="listview" merge-by="type" parent="GenericItem">
+		<list-view:list-view>
+			<list-view:column qualifier="pk"/>
+			<list-view:column qualifier="title"/>
+			<list-view:column qualifier="content"/>
+		</list-view:list-view>
+	</context>
+
+    <!-- Advance search for type properties -->
+    <context type="Faq" component="advanced-search" merge-by="type" parent="GenericItem">
+		<advanced-search:advanced-search>
+			<advanced-search:field-list>
+				<advanced-search:field name="pk" selected="true" sortable="true" operator="equals"/>
+				<advanced-search:field name="title" selected="true" sortable="true" operator="equals"/>
+				<advanced-search:field name="content" selected="true" sortable="true" operator="equals"/>
+ 			</advanced-search:field-list>
+		</advanced-search:advanced-search>
+	</context>
+
+    <!-- Simple search for type properties -->
+    <context type="Faq" component="simple-search" merge-by="type">
+		<simple-search:simple-search>
+			<simple-search:field name="pk"/>
+			<simple-search:field name="title"/>
+		</simple-search:simple-search>
+	</context>
+
+    <!-- Customization view for Faq -->
+    <context merge-by="type" type="Faq" component="editor-area">
+		<editorArea:editorArea name="editArea_faq">
+			<editorArea:essentials>
+				<editorArea:essentialSection name="hmc.essential.faq">
+					<editorArea:attribute qualifier="pk"/>
+					<editorArea:attribute qualifier="itemtype"/>
+				</editorArea:essentialSection>
+			</editorArea:essentials>
+			<editorArea:tab name="hmc.tab.faq.custom" position="1">
+				<editorArea:section name="hmc.section.faq.custom">
+					<editorArea:attribute qualifier="title"/>
+					<editorArea:attribute editor="com.hybris.cockpitng.editor.wysiwyg" qualifier="content"/>
+				</editorArea:section>
+			</editorArea:tab>
+		</editorArea:editorArea>
+	</context>
 </config>
