@@ -8,7 +8,8 @@
                 		
         
         <requires-extension name="backoffice"/>
-                		
+        <requires-extension name="trainingsocialsitecore"/>
+
         
         <!--PLACEHOLDER_FOR_SASS_REGISTRATION-->
                 		
